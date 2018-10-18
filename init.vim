@@ -147,17 +147,6 @@ set updatetime=100
 " Indent guides by default
 let g:indent_guides_enable_on_vim_startup = 1
 
-""""""""""""""""""""""""""""""""
-" => Headers 
-""""""""""""""""""""""""""""""""
-
-autocmd bufnewfile *.c so /home/sebastien/.config/nvim/tek_header
-autocmd bufnewfile *.c exe "1," . 6 . "g/File Name :.*/s//File Name : ".expand("%")
-autocmd bufnewfile *.c exe "1," . 6 . "g/Creation Date :.*/s//Creation Date : " .strftime("%d-%m-%Y")
-autocmd Bufwritepre,filewritepre *.c execute "normal ma"
-autocmd Bufwritepre,filewritepre *.c exe "1," . 6 . "g/Last Modified :.*/s//Last Modified :.*/Last Modified : " .strftime("%c")
-autocmd bufwritepost,filewritepost *.c execute "normal `a"
-
 " Ruler at 80 columns
 set colorcolumn=80
 
